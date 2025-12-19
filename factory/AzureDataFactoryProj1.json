@@ -1,0 +1,9 @@
+{
+	"name": "AzureDataFactoryProj1",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d6e83d30-25f6-4840-b9d8-00934689c2e0",
+		"tenantId": "12e0b6f8-f6ff-4173-af16-8777f0db39a8"
+	}
+}
