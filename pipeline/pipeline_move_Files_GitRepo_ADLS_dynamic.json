@@ -96,7 +96,7 @@
 						}
 					},
 					"dataset": {
-						"referenceName": "ds_files_list_json",
+						"referenceName": "Json1",
 						"type": "DatasetReference"
 					}
 				}
