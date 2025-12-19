@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "Datasets/blob/main/project1/AdventureWorks_Products.csv"
+				"relativeUrl": "achyuthabala/Datasets/blob/main/project1/AdventureWorks_Products.csv"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
