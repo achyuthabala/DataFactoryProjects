@@ -1,0 +1,30 @@
+{
+	"name": "ds_http_git_files_dynamic",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_HttpServer",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"p_source_rel_url": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "@dataset().p_source_rel_url",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

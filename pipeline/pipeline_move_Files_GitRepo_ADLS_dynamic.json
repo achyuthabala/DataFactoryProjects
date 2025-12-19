@@ -48,7 +48,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ds_http_git_files",
+						"referenceName": "ds_http_git_files_dynamic",
 						"type": "DatasetReference"
 					}
 				],
