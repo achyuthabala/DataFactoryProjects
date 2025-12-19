@@ -1,0 +1,6 @@
+{
+	"name": "pipeline_move_Files_GitRepo_ADLS",
+	"properties": {
+		"annotations": []
+	}
+}
