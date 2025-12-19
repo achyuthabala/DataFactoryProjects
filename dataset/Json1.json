@@ -2,15 +2,14 @@
 	"name": "Json1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_HttpServer",
+			"referenceName": "ls_git_json_file",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
-				"type": "HttpServerLocation",
-				"relativeUrl": "achyuthabala/Datasets/main/project1/git_files.json"
+				"type": "HttpServerLocation"
 			}
 		},
 		"schema": {}
