@@ -54,7 +54,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "ds_adls_firstproject_bronze",
+						"referenceName": "ds_adls_firstproject_bronze_dynamic",
 						"type": "DatasetReference"
 					}
 				]
