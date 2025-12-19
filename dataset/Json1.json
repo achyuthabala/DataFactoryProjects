@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "https://github.com"
+				"relativeUrl": "achyuthabala/Datasets/main/project1/git_files.json"
 			}
 		},
 		"schema": {}
