@@ -1,5 +1,5 @@
 {
-	"name": "pipeline_move_Files_GitRepo_ADLS",
+	"name": "pipeline_move_Files_GitRepo_ADLS_static",
 	"properties": {
 		"activities": [
 			{
