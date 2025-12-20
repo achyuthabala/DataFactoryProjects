@@ -10,12 +10,13 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "achyuthabala/Datasets/blob/main/project1/AdventureWorks_Products.csv"
+				"relativeUrl": "achyuthabala/Datasets/main/project1/AdventureWorks_Products.csv"
 			},
 			"columnDelimiter": ",",
+			"rowDelimiter": "\n",
 			"escapeChar": "\\",
-			"firstRowAsHeader": true,
-			"quoteChar": "\""
+			"firstRowAsHeader": false,
+			"quoteChar": null
 		},
 		"schema": []
 	}
