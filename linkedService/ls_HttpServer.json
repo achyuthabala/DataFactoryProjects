@@ -5,11 +5,11 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://github.com",
+			"url": "https://raw.githubusercontent.com",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Basic",
 			"userName": "achyuthabala",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEYxNkVCOTQyLTNEMUQtNDBBOS1CNTUxLTI5MkIxQUM4NzA2NV8zNWI3NzY2Zi1lYThmLTRmMjgtYmExOS03OGEwYWJjOTY5MDkiDQp9"
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEYxNkVCOTQyLTNEMUQtNDBBOS1CNTUxLTI5MkIxQUM4NzA2NV8wYjBhNjM2OS01ZDhjLTRiYzgtYjNjZC0zNjY1YTAxZGUyNjAiDQp9"
 		}
 	}
 }
