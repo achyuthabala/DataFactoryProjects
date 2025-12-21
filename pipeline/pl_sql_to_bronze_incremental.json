@@ -1,0 +1,111 @@
+{
+	"name": "pl_sql_to_bronze_incremental",
+	"properties": {
+		"activities": [
+			{
+				"name": "lkp_last_max_dt",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT max(mark_id) as last_max_dt from watermark",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "ds_sql_car_sales",
+						"type": "DatasetReference",
+						"parameters": {
+							"table_name": "watermark"
+						}
+					}
+				}
+			},
+			{
+				"name": "lkp_current_max_dt",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT MAX ([Date_ID]) AS current_max_dt FROM [dbo].[source_cars_data]",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "ds_sql_car_sales",
+						"type": "DatasetReference",
+						"parameters": {
+							"table_name": "watermark"
+						}
+					}
+				}
+			},
+			{
+				"name": "cp_sql_to_bronze",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "lkp_last_max_dt",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "lkp_current_max_dt",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": {
+							"value": "SELECT * FROM [dbo].[source_cars_data]\nwhere date_ID @{activity('lkp_last_max_dt').output.firstRow.last_max_dt} > AND Date_ID <= @{activity('lkp_current_max_dt').output.firstRow.current_max_dt}",
+							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_sql_car_sales",
+						"type": "DatasetReference",
+						"parameters": {
+							"table_name": "source_cars_data"
+						}
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
