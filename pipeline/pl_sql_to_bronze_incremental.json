@@ -87,7 +87,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "SELECT * FROM [dbo].[source_cars_data]\nwhere date_ID @{activity('lkp_last_max_dt').output.firstRow.last_max_dt} > AND Date_ID <= @{activity('lkp_current_max_dt').output.firstRow.current_max_dt}",
+							"value": "SELECT * FROM [dbo].[source_cars_data]\nwhere date_ID > @{activity('lkp_last_max_dt').output.firstRow.last_max_dt}  AND Date_ID <= @{activity('lkp_current_max_dt').output.firstRow.current_max_dt}",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
